@@ -211,30 +211,28 @@
     .testimonials .section-title { color: var(--dark); }
     .testimonials .section-sub { color: rgba(13,17,23,0.65); }
 
-    .testi-grid {
+    .comments-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 960px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1040px;
       margin: 0 auto;
     }
-    .testi-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    .comment-screenshot {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
-    .stars { display: flex; gap: 3px; margin-bottom: 14px; }
-    .stars svg { width: 16px; height: 16px; fill: var(--yellow); color: var(--yellow); }
-    .testi-card blockquote {
-      font-size: 15px;
-      line-height: 1.65;
-      color: #444;
-      font-style: italic;
-      margin-bottom: 16px;
+    .comment-screenshot:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
     }
-    .testi-name { font-weight: 700; font-size: 14px; color: var(--dark); }
-    .testi-loc  { font-weight: 400; color: #888; }
+    .comment-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* ── FINAL CTA ── */
     .final-cta {
@@ -392,44 +390,32 @@
 
   <!-- ── TESTIMONIALS ── -->
   <section class="testimonials">
-    <h2 class="section-title reveal">Members Are Saving Real Money</h2>
-    <p class="section-sub reveal">Real people, real savings. Here's what some of our UK members have to say.</p>
-    <div class="testi-grid">
+    <h2 class="section-title reveal">What Members Are Saying</h2>
+    <p class="section-sub reveal">Real comments from real UK bargain hunters inside the group.</p>
+    <div class="comments-grid">
 
-      <div class="testi-card reveal">
-        <div class="stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"Saved over £200 in my first month. This group is genuinely brilliant."</blockquote>
-        <div class="testi-name">Sarah M. <span class="testi-loc">· Manchester</span></div>
+      <div class="comment-screenshot reveal">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663343419762/guupnoqWmHUkEGgQiqPSb7/fb_comment_1-8EAZ6nAPYchUphQjTDq7oM.webp"
+          alt="Facebook comments — Karen, Dave and Steph reacting to a deal"
+          loading="lazy"
+        />
       </div>
 
-      <div class="testi-card reveal">
-        <div class="stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"Found a price glitch on a TV — got it for £89 instead of £449. Unreal."</blockquote>
-        <div class="testi-name">James T. <span class="testi-loc">· London</span></div>
+      <div class="comment-screenshot reveal">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663343419762/guupnoqWmHUkEGgQiqPSb7/fb_comment_2-Ev7xbgkQ9rCUF9gB2qNQMx.webp"
+          alt="Facebook comments — Tom, Nicola and Raj sharing their savings"
+          loading="lazy"
+        />
       </div>
 
-      <div class="testi-card reveal">
-        <div class="stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"The daily deal posts are the first thing I check every morning. Addicted!"</blockquote>
-        <div class="testi-name">Priya K. <span class="testi-loc">· Birmingham</span></div>
+      <div class="comment-screenshot reveal">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663343419762/guupnoqWmHUkEGgQiqPSb7/fb_comment_3-V22WaitW66DZufUvDr9UsA.webp"
+          alt="Facebook comments — Emma, Mike and Yasmin reacting to a price glitch"
+          loading="lazy"
+        />
       </div>
 
     </div>
