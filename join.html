@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joining Deals & Crumpets...</title>
+  <meta http-equiv="refresh" content="0; url=https://www.facebook.com/groups/dealsandcrumpets" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: sans-serif;
+      background: #00C9A7;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    h1 { font-size: 28px; margin-bottom: 12px; }
+    p  { font-size: 16px; opacity: 0.85; margin-bottom: 28px; }
+    a  {
+      display: inline-block;
+      background: #FFD600;
+      color: #0D1117;
+      font-weight: 800;
+      font-size: 18px;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Taking you to the group...</h1>
+  <p>If you are not redirected automatically, tap the button below.</p>
+  <a href="https://www.facebook.com/groups/dealsandcrumpets">Open Deals &amp; Crumpets Group</a>
+  <script>
+    // Try multiple methods to ensure navigation works in all browsers including FB in-app
+    try { window.location.replace('https://www.facebook.com/groups/dealsandcrumpets'); } catch(e) {}
+    setTimeout(function() {
+      try { window.location.href = 'https://www.facebook.com/groups/dealsandcrumpets'; } catch(e) {}
+    }, 500);
+  </script>
+</body>
+</html>
