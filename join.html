@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joining Deals & Crumpets...</title>
-  <meta http-equiv="refresh" content="0; url=https://www.facebook.com/groups/dealsandcrumpets" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #00C9A7;
       color: white;
       display: flex;
@@ -17,32 +16,91 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 24px;
+      padding: 32px 24px;
+      gap: 20px;
     }
-    h1 { font-size: 28px; margin-bottom: 12px; }
-    p  { font-size: 16px; opacity: 0.85; margin-bottom: 28px; }
-    a  {
-      display: inline-block;
+    .logo {
+      width: 72px; height: 72px;
+      border-radius: 16px;
+      border: 3px solid rgba(255,255,255,0.4);
+      object-fit: cover;
+    }
+    h1 { font-size: 26px; font-weight: 800; line-height: 1.2; }
+    p  { font-size: 15px; opacity: 0.8; max-width: 280px; line-height: 1.5; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       background: #FFD600;
       color: #0D1117;
       font-weight: 800;
       font-size: 18px;
-      padding: 16px 32px;
-      border-radius: 12px;
+      padding: 18px 32px;
+      border-radius: 14px;
       text-decoration: none;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
     }
+    .note { font-size: 12px; opacity: 0.55; }
   </style>
 </head>
 <body>
-  <h1>Taking you to the group...</h1>
-  <p>If you are not redirected automatically, tap the button below.</p>
-  <a href="https://www.facebook.com/groups/dealsandcrumpets">Open Deals &amp; Crumpets Group</a>
+  <img class="logo" src="https://dealsandcrumpets.github.io/deals-crumpets-landing/logo.jpg" alt="Deals & Crumpets" />
+  <h1>One tap away from the group!</h1>
+  <p>Tap the button below to open the Deals &amp; Crumpets Facebook Group.</p>
+
+  <button class="btn" id="joinBtn">
+    Open Deals &amp; Crumpets Group
+  </button>
+
+  <p class="note">Opens in Facebook app or browser</p>
+
   <script>
-    // Try multiple methods to ensure navigation works in all browsers including FB in-app
-    try { window.location.replace('https://www.facebook.com/groups/dealsandcrumpets'); } catch(e) {}
-    setTimeout(function() {
-      try { window.location.href = 'https://www.facebook.com/groups/dealsandcrumpets'; } catch(e) {}
-    }, 500);
+    var GROUP_URL = 'https://www.facebook.com/groups/dealsandcrumpets';
+
+    // Detect Android vs iOS
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    document.getElementById('joinBtn').addEventListener('click', function() {
+      if (isAndroid) {
+        // Android: use intent:// to force open in external browser (Chrome)
+        // This escapes Facebook's in-app browser completely
+        var intentUrl = 'intent://www.facebook.com/groups/dealsandcrumpets#Intent;scheme=https;package=com.android.chrome;end';
+        window.location.href = intentUrl;
+        // Fallback after 1.5s if Chrome not installed
+        setTimeout(function() {
+          window.location.href = GROUP_URL;
+        }, 1500);
+      } else if (isIOS) {
+        // iOS: open in Safari via a hidden iframe trick
+        // Create a temporary link and simulate a click
+        var a = document.createElement('a');
+        a.href = GROUP_URL;
+        a.rel = 'noreferrer';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        // Fallback
+        setTimeout(function() {
+          window.location.href = GROUP_URL;
+        }, 500);
+      } else {
+        // Desktop / other
+        window.location.href = GROUP_URL;
+      }
+    });
+
+    // Auto-attempt on page load for non-FB browsers
+    if (!(/FBAN|FBAV|FB_IAB/i.test(ua))) {
+      window.location.href = GROUP_URL;
+    }
   </script>
 </body>
 </html>
